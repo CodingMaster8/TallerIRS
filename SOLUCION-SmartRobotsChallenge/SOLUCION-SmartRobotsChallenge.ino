@@ -1,7 +1,7 @@
 // Motor A
 int enA = 11;
-int in1 = 12;
-int in2 = 13;
+int in1 = 13;
+int in2 = 12;
 
 // Motor B
 int enB = 9;
@@ -22,19 +22,19 @@ void Adelante(int speed){
 void Izquierda(int speed){
   analogWrite(enA, speed);
   analogWrite(enB, speed);
-  digitalWrite(in1, HIGH);
-  digitalWrite(in2, LOW);
-  digitalWrite(in3, LOW);
-  digitalWrite(in4, HIGH);
+  digitalWrite(in1, LOW);
+  digitalWrite(in2, HIGH);
+  digitalWrite(in3, HIGH);
+  digitalWrite(in4, LOW);
 }
 
 void Derecha(int speed){
   analogWrite(enA, speed);
   analogWrite(enB, speed);
-  digitalWrite(in1, LOW);
-  digitalWrite(in2, HIGH);
-  digitalWrite(in3, HIGH);
-  digitalWrite(in4, LOW);
+  digitalWrite(in1, HIGH);
+  digitalWrite(in2, LOW);
+  digitalWrite(in3, LOW);
+  digitalWrite(in4, HIGH);
 }
 
 void Atras(int speed){
@@ -82,10 +82,10 @@ void loop() {
 
   ///////// Escribir tus funciones a partir de aqui /////////////
   if (opcion == '0'){
-    Parar();
+    Adelante(255);
   }
   else if (opcion == '1'){
-    Adelante(255);
+    Atras(255);
   }
   else if (opcion == '2'){
     Izquierda(255);
@@ -94,7 +94,7 @@ void loop() {
     Derecha(255);
   }
   else if (opcion == '4'){
-    Atras(255);
+    Parar();
   }
   
   ////////////////////// No editar //////////////////////////////
