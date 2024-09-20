@@ -71,10 +71,12 @@ void setup() {
 }
 
 void loop() {
+  Serial.println("Reading... = ");
   if (Serial.available()>0) 
   {
      opcion = Serial.read();
   }
+  Serial.print(opcion);
   /* Ejemplo: 0 Parar
   if (opcion == '0'){
     Parar();
